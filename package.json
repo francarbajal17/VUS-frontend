@@ -1,6 +1,7 @@
 {
   "name": "vus-frontend",
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -54,9 +55,11 @@
     "@types/express": "^5.0.1",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^20.17.19",
-    "@typescript-eslint/eslint-plugin": "^7.18.0",
-    "@typescript-eslint/parser": "^7.18.0",
-    "eslint": "^8.57.1",
+    "@typescript-eslint/eslint-plugin": "^8.41.0",
+    "@typescript-eslint/parser": "^8.41.0",
+    "@typescript-eslint/utils": "^8.41.0",
+    "angular-eslint": "^20.2.0",
+    "eslint": "^9.34.0",
     "husky": "^9.1.7",
     "jasmine-core": "~5.8.0",
     "karma": "~6.4.0",
@@ -66,6 +69,7 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "lint-staged": "^15.5.2",
     "prettier": "^3.6.2",
-    "typescript": "5.5"
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.41.0"
   }
 }
