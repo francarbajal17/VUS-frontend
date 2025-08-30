@@ -7,18 +7,26 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:vus-frontend": "node dist/vus-frontend/server/server.mjs"
+    "serve:ssr:vus-frontend": "node dist/vus-frontend/server/server.mjs",
+    "check:lint": "eslint src/**/*.ts src/**/*.component.html",
+    "fix:lint": "eslint src/**/*.ts src/**/*.component.html --fix",
+    "check:format": "prettier --check 'src/**/*.{ts,html,css,scss,json,md}'",
+    "fix:format": "prettier --write 'src/**/*.{ts,html,css,scss,json,md}'",
+    "check": "tsc --noEmit && npm run check:lint && npm run check:format",
+    "fix": "npm run fix:lint && npm run fix:format",
+    "prepare": "husky"
   },
-  "prettier": {
-    "printWidth": 100,
-    "singleQuote": true,
-    "overrides": [
-      {
-        "files": "*.html",
-        "options": {
-          "parser": "angular"
-        }
-      }
+  "lint-staged": {
+    "*.ts": [
+      "npm run check:lint",
+      "npm run fix:format"
+    ],
+    "*.component.html": [
+      "npm run check:lint",
+      "npm run fix:format"
+    ],
+    "*.{html,css,scss,json,md}": [
+      "npm run fix:format"
     ]
   },
   "private": true,
@@ -37,18 +45,27 @@
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
+    "@angular-eslint/eslint-plugin": "^20.2.0",
+    "@angular-eslint/eslint-plugin-template": "^20.2.0",
+    "@angular-eslint/template-parser": "^20.2.0",
     "@angular/build": "^20.1.6",
     "@angular/cli": "^20.1.6",
     "@angular/compiler-cli": "^20.1.0",
     "@types/express": "^5.0.1",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^20.17.19",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint": "^8.57.1",
+    "husky": "^9.1.7",
     "jasmine-core": "~5.8.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.8.2"
+    "lint-staged": "^15.5.2",
+    "prettier": "^3.6.2",
+    "typescript": "5.5"
   }
 }
