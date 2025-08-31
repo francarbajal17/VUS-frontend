@@ -1,0 +1,13 @@
+.home {
+  position: relative;
+  height: 3700px;
+}
+
+.backgroundImage {
+  width: 100vw;
+  height: 90vh;
+  background-image: url('/image.png');
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
