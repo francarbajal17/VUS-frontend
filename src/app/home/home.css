@@ -1,13 +1,93 @@
-.home {
+/*.home {
   position: relative;
   height: 3700px;
 }
 
 .backgroundImage {
-  width: 100vw;
+  width: 100%;
   height: 90vh;
   background-image: url('/image.png');
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
+}*/
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family:
+    'Inter',
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    sans-serif;
+}
+
+/* Fondo a pantalla completa */
+.hero {
+  min-height: 100vh; /* llena la altura de la ventana */
+  background-image: url('/backgroundimage.png'); /* cambia por tu imagen */
+  background-size: cover; /* recorta sin deformar */
+  background-position: center; /* centrada */
+  background-repeat: no-repeat;
+}
+
+.top-header {
+  position: fixed;
+  inset: 18px 20px auto;
+  z-index: 10;
+  gap: 0px;
+}
+
+.bar {
+  display: grid;
+  place-items: center;
+  padding: 10px 0px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.bar--white {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 15px 15px 0px 0px;
+  place-content: center;
+  color: rgba(0, 0, 0, 1);
+  font-size: 14px;
+  font-family: 'Inter';
+  line-height: 1;
+}
+
+.bar--black {
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 0px 0px 15px 15px;
+  height: 56px;
+  place-content: center;
+}
+
+/* opcional: logo centrado dentro de la barra negra */
+.white--logo {
+  height: 48px;
+  display: block;
+}
+
+/* Responsivo simple */
+@media (max-width: 680px) {
+  .top-header {
+    inset: 8px 8px auto;
+    gap: 8px;
+  }
+  .bar--black {
+    height: 28px;
+    border-radius: 0px 0px 8px 8px;
+  }
+  .bar--white {
+    height: 20px;
+    font-size: 8px;
+    border-radius: 8px 8px 0px 0px;
+  }
+  .white--logo {
+    height: 24px;
+  }
 }
