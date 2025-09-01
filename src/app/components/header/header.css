@@ -1,0 +1,101 @@
+.top-header {
+  position: fixed;
+  inset: 18px 20px auto;
+  z-index: 10;
+  gap: 0px;
+  transition: all 0.3s ease;
+}
+
+/* Estado normal - al inicio de la página */
+.header-normal {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Estado sticky - durante la sección hero */
+.header-sticky {
+  transform: translateY(0);
+  opacity: 1;
+  inset: 0 20px auto;
+}
+
+/* Estado oculto - fuera de la sección hero */
+.header-hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.bar {
+  display: grid;
+  place-items: center;
+  padding: 10px 0px;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.bar--white {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 15px 15px 0px 0px;
+  place-content: center;
+  color: rgba(0, 0, 0, 1);
+  font-size: 14px;
+  font-family: 'Inter';
+  line-height: 1;
+  transition: all 0.3s ease;
+  user-select: none; /* Texto no seleccionable */
+  -webkit-user-select: none; /* Para Safari */
+  -moz-user-select: none; /* Para Firefox */
+  -ms-user-select: none; /* Para IE/Edge */
+}
+
+/* Clase para ocultar la barra blanca */
+.bar--white.bar--hidden {
+  opacity: 0;
+  transform: translateY(-100%);
+  height: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.bar--black {
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 0px 0px 15px 15px;
+  height: 56px;
+  place-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.3);
+}
+
+.white--logo {
+  height: 48px;
+  display: block;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Responsivo simple */
+@media (max-width: 680px) {
+  .top-header {
+    inset: 8px 8px auto;
+    gap: 8px;
+  }
+
+  .header-sticky {
+    inset: 0 8px auto;
+  }
+
+  .bar--black {
+    height: 28px;
+    border-radius: 0px 0px 8px 8px;
+  }
+  .bar--white {
+    height: 20px;
+    font-size: 8px;
+    border-radius: 8px 8px 0px 0px;
+  }
+  .white--logo {
+    height: 24px;
+  }
+}

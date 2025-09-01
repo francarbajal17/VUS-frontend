@@ -1,17 +1,3 @@
-/*.home {
-  position: relative;
-  height: 3700px;
-}
-
-.backgroundImage {
-  width: 100%;
-  height: 90vh;
-  background-image: url('/image.png');
-  background-size: cover;
-  background-position: top center;
-  background-repeat: no-repeat;
-}*/
-
 html,
 body {
   height: 100%;
@@ -25,69 +11,42 @@ body {
     sans-serif;
 }
 
-/* Fondo a pantalla completa */
-.hero {
-  min-height: 100vh; /* llena la altura de la ventana */
-  background-image: url('/backgroundimage.png'); /* cambia por tu imagen */
-  background-size: cover; /* recorta sin deformar */
-  background-position: center; /* centrada */
-  background-repeat: no-repeat;
+/* Estilos para las secciones */
+section {
+  padding: 80px 0;
 }
 
-.top-header {
-  position: fixed;
-  inset: 18px 20px auto;
-  z-index: 10;
-  gap: 0px;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.bar {
-  display: grid;
-  place-items: center;
-  padding: 10px 0px;
-  text-transform: uppercase;
-  font-weight: 600;
+/* Sección 2 */
+.section-2 {
+  background-color: #f8f9fa;
+  min-height: 100vh;
 }
 
-.bar--white {
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 15px 15px 0px 0px;
-  place-content: center;
-  color: rgba(0, 0, 0, 1);
-  font-size: 14px;
-  font-family: 'Inter';
-  line-height: 1;
+/* Sección 3 */
+.section-3 {
+  background-color: #ffffff;
+  min-height: 100vh;
 }
 
-.bar--black {
-  background: rgba(0, 0, 0, 0.9);
-  border-radius: 0px 0px 15px 15px;
-  height: 56px;
-  place-content: center;
+/* Sección 4 */
+.section-4 {
+  background-color: #e9ecef;
+  min-height: 100vh;
 }
 
-/* opcional: logo centrado dentro de la barra negra */
-.white--logo {
-  height: 48px;
-  display: block;
-}
-
-/* Responsivo simple */
-@media (max-width: 680px) {
-  .top-header {
-    inset: 8px 8px auto;
-    gap: 8px;
+/* Responsivo */
+@media (max-width: 768px) {
+  section {
+    padding: 40px 0;
   }
-  .bar--black {
-    height: 28px;
-    border-radius: 0px 0px 8px 8px;
-  }
-  .bar--white {
-    height: 20px;
-    font-size: 8px;
-    border-radius: 8px 8px 0px 0px;
-  }
-  .white--logo {
-    height: 24px;
+
+  .container {
+    padding: 0 15px;
   }
 }

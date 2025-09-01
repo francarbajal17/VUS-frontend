@@ -1,0 +1,14 @@
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.hero-background {
+  width: 100%;
+  height: 100vh;
+  background-image: url('/backgroundimage.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
