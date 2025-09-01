@@ -14,6 +14,8 @@ export class Header implements OnInit, OnDestroy {
   protected readonly whiteBarVisible = signal(true);
   protected readonly logoHovered = signal(false);
 
+  private readonly scrollDuration = 800; // en milisegundos
+
   private platformId = inject(PLATFORM_ID);
   private scrollListener: (() => void) | null = null;
 
@@ -36,6 +38,39 @@ export class Header implements OnInit, OnDestroy {
 
   onLogoMouseLeave() {
     this.logoHovered.set(false);
+  }
+
+  // Método para hacer scroll hacia arriba
+  onLogoClick() {
+    this.scrollToTop();
+  }
+
+  private scrollToTop() {
+    if (isPlatformBrowser(this.platformId)) {
+      const startPosition = window.pageYOffset;
+      const startTime = performance.now();
+
+      const animateScroll = (currentTime: number) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / this.scrollDuration, 1);
+
+        // Función de easing para un scroll más suave
+        const easeInOutCubic = (t: number) => {
+          return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+        };
+
+        const easedProgress = easeInOutCubic(progress);
+        const newPosition = startPosition * (1 - easedProgress);
+
+        window.scrollTo(0, newPosition);
+
+        if (progress < 1) {
+          requestAnimationFrame(animateScroll);
+        }
+      };
+
+      requestAnimationFrame(animateScroll);
+    }
   }
 
   private setupScrollListener() {
