@@ -14,7 +14,7 @@ export class Header implements OnInit, OnDestroy {
   protected readonly whiteBarVisible = signal(true);
   protected readonly logoHovered = signal(false);
 
-  private readonly scrollDuration = 800; // en milisegundos
+  private readonly scrollDuration = 800;
 
   private platformId = inject(PLATFORM_ID);
   private scrollListener: (() => void) | null = null;
@@ -82,14 +82,14 @@ export class Header implements OnInit, OnDestroy {
         const heroRect = heroSection.getBoundingClientRect();
         const heroBottom = heroRect.bottom;
 
-        // Cambiar clases del header basado en la posición
         if (scrollY <= 0) {
           // Al inicio de la página
           this.headerClass.set('header-normal');
           this.blackBarOpacity.set(0.9);
           this.whiteBarVisible.set(true);
-        } else if (scrollY > 0 && heroBottom > 0) {
+        } else if (scrollY > 0 && heroBottom > 60) {
           // Durante la sección hero
+
           this.headerClass.set('header-sticky');
 
           // Calcular transparencia progresiva en los primeros 350px
@@ -97,7 +97,7 @@ export class Header implements OnInit, OnDestroy {
           const opacity = 0.9 - transparencyProgress * 0.8; // De 0.9 a 0.1
           this.blackBarOpacity.set(opacity);
 
-          // Ocultar la barra blanca después de 50px de scroll
+          // Ocultar la barra blanca después de 70px de scroll
           if (scrollY > 50) {
             this.whiteBarVisible.set(false);
           } else {

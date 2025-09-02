@@ -6,20 +6,17 @@
   transition: all 0.3s ease;
 }
 
-/* Estado normal - al inicio de la página */
 .header-normal {
   transform: translateY(0);
   opacity: 1;
 }
 
-/* Estado sticky - durante la sección hero */
 .header-sticky {
   transform: translateY(0);
   opacity: 1;
   inset: 0 20px auto;
 }
 
-/* Estado oculto - fuera de la sección hero */
 .header-hidden {
   transform: translateY(-100%);
   opacity: 0;
@@ -50,7 +47,6 @@
   -ms-user-select: none; /* Para IE/Edge */
 }
 
-/* Clase para ocultar la barra blanca */
 .bar--white.bar--hidden {
   opacity: 0;
   transform: translateY(-100%);
@@ -76,7 +72,7 @@
   cursor: pointer;
 }
 
-/* Responsivo simple */
+/* Simple responsive */
 @media (max-width: 680px) {
   .top-header {
     inset: 8px 8px auto;

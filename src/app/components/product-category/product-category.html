@@ -1,0 +1,11 @@
+<div class="product-category">
+  <h2 class="category-title">{{ title }}</h2>
+  <div class="products-grid">
+    <app-product-box
+      *ngFor="let product of products"
+      [imageUrl]="product.imageUrl"
+      [title]="product.title"
+      [price]="product.price"
+    ></app-product-box>
+  </div>
+</div>

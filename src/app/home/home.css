@@ -13,7 +13,7 @@ body {
 
 /* Estilos para las secciones */
 section {
-  padding: 80px 0;
+  padding: 20px 0;
 }
 
 .container {
@@ -24,8 +24,8 @@ section {
 
 /* Sección 2 */
 .section-2 {
-  background-color: #f8f9fa;
-  min-height: 100vh;
+  background-color: #ffffff;
+  padding: 0;
 }
 
 /* Sección 3 */

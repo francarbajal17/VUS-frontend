@@ -1,19 +1,17 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap"
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@300..900&display=swap"
   rel="stylesheet"
 />
 
-<!-- Sección 1: Hero con Header -->
 <app-header></app-header>
 <app-hero></app-hero>
 
-<!-- Sección 2: (placeholder para futura implementación) -->
 <section class="section-2">
-  <div class="container">
-    <h2>Sección 2</h2>
-    <p>Contenido de la segunda sección</p>
-  </div>
+  <app-product-category title="T-SHIRTS" [products]="tshirts"> </app-product-category>
+
+  <app-product-category title="HOODIES" [products]="hoodies"> </app-product-category>
 </section>
 
 <!-- Sección 3: (placeholder para futura implementación) -->
