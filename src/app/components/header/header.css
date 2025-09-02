@@ -30,13 +30,14 @@
   place-items: center;
   padding: 10px 0px;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 500;
   transition: all 0.3s ease;
 }
 
 .bar--white {
   background: rgba(255, 255, 255, 0.6);
   border-radius: 15px 15px 0px 0px;
+  height: 40px;
   place-content: center;
   color: rgba(0, 0, 0, 1);
   font-size: 14px;
@@ -62,7 +63,7 @@
 .bar--black {
   background: rgba(0, 0, 0, 0.9);
   border-radius: 0px 0px 15px 15px;
-  height: 56px;
+  height: 60px;
   place-content: center;
   transition: all 0.3s ease;
   box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.3);
