@@ -14,22 +14,26 @@ import { Product } from '../components/product-category/product-category';
 export class Home {
   protected readonly tshirts: Product[] = [
     {
-      imageUrl: '/assets/placeholder.svg',
+      imageUrl: '/BlackFront.png',
+      imageUrlBack: '/BlackFront.png',
       title: 'Oversized Black T-Shirt',
       price: 'UYU 1290',
     },
     {
-      imageUrl: '/assets/placeholder.svg',
+      imageUrl: '/WhiteFront.png',
+      imageUrlBack: '/WhiteFront.png',
       title: 'Oversized White T-Shirt',
       price: 'UYU 1290',
     },
     {
-      imageUrl: '/assets/placeholder.svg',
+      imageUrl: '/OrangeFront.png',
+      imageUrlBack: '/OrangeFront.png',
       title: 'Oversized Orange T-Shirt',
       price: 'UYU 1290',
     },
     {
-      imageUrl: '/assets/placeholder.svg',
+      imageUrl: '/BlueFront.png',
+      imageUrlBack: '/BlueFront.png',
       title: 'Oversized Blue T-Shirt',
       price: 'UYU 1290',
     },
@@ -37,23 +41,27 @@ export class Home {
 
   protected readonly hoodies: Product[] = [
     {
-      imageUrl: '/assets/placeholder.svg',
+      imageUrl: '/hoodies/BlackFront.png',
+      imageUrlBack: '/hoodies/BlackBack.png',
       title: 'Oversized Black Hoodie',
       price: 'UYU 2090',
     },
     {
-      imageUrl: '/assets/placeholder.svg',
+      imageUrl: '/hoodies/BeigeFront.png',
+      imageUrlBack: '/hoodies/BeigeBack.png',
       title: 'Oversized Mushroom Hoodie',
       price: 'UYU 2090',
     },
     {
-      imageUrl: '/assets/placeholder.svg',
-      title: 'Oversized Grey Hoodie',
+      imageUrl: '/hoodies/BlueFront.png',
+      imageUrlBack: '/hoodies/BlueBack.png',
+      title: 'Oversized Blue Hoodie',
       price: 'UYU 2090',
     },
     {
-      imageUrl: '/assets/placeholder.svg',
-      title: 'Oversized Black Hoodie',
+      imageUrl: '/hoodies/GreenFront.png',
+      imageUrlBack: '/hoodies/GreenBack.png',
+      title: 'Oversized Green Hoodie',
       price: 'UYU 2090',
     },
   ];

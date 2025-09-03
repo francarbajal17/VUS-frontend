@@ -4,6 +4,7 @@ import { ProductBox } from '../product-box/product-box';
 
 export interface Product {
   imageUrl: string;
+  imageUrlBack: string;
   title: string;
   price: string;
 }
