@@ -1,13 +1,13 @@
 .product-category {
-  margin-bottom: 48px;
+  margin-bottom: 34px;
 }
 
 .category-title {
   font-family: 'Inter', sans-serif;
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 600;
   color: rgba(0, 0, 0, 1);
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   padding-left: 20px;
   text-align: left;
   user-select: none; /* Texto no seleccionable */
@@ -22,7 +22,6 @@
   gap: 3px;
 }
 
-/* Responsive design */
 @media (max-width: 1024px) {
   .products-grid {
     grid-template-columns: repeat(4, 1fr);

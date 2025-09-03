@@ -72,7 +72,30 @@
   cursor: pointer;
 }
 
-/* Simple responsive */
+@media (max-width: 1512px) {
+  .top-header {
+    inset: 14px 14px auto;
+    gap: 8px;
+  }
+
+  .header-sticky {
+    inset: 0 14px auto;
+  }
+
+  .bar--black {
+    height: 40px;
+    border-radius: 0px 0px 12px 12px;
+  }
+  .bar--white {
+    height: 28px;
+    font-size: 10px;
+    border-radius: 12px 12px 0px 0px;
+  }
+  .white--logo {
+    height: 36px;
+  }
+}
+
 @media (max-width: 680px) {
   .top-header {
     inset: 8px 8px auto;
