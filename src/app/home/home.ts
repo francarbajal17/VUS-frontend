@@ -3,11 +3,12 @@ import { Header } from '../components/header/header';
 import { Hero } from '../components/hero/hero';
 import { ProductCategory } from '../components/product-category/product-category';
 import { Product } from '../components/product-category/product-category';
+import { GetToKnowUsComponent } from '../components/get-to-know-us/get-to-know-us';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [Header, Hero, ProductCategory],
+  imports: [Header, Hero, ProductCategory, GetToKnowUsComponent],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
