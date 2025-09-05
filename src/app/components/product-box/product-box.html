@@ -1,6 +1,6 @@
 <div class="product-box">
   <div class="product-image" (mouseenter)="onImageHover()" (mouseleave)="onImageLeave()">
-    <img [src]="getCurrentImage()" [alt]="title" />
+    <img [src]="getCurrentImage()" [alt]="title" draggable="false" />
   </div>
   <div class="product-info">
     <h3 class="product-title">{{ title }}</h3>

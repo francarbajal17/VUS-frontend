@@ -1,10 +1,15 @@
 <section class="get-to-know">
   <div class="grid">
     <div class="left">
-      <img [src]="leftImage" alt="Know us left" class="left-img" />
+      <img [src]="leftImage" alt="Know us left" class="left-img" draggable="false" />
     </div>
     <div class="right">
-      <img [src]="rightImage" alt="Know us right" class="right-img with-opacity" />
+      <img
+        [src]="rightImage"
+        alt="Know us right"
+        class="right-img with-opacity"
+        draggable="false"
+      />
       <div class="overlay">
         <div class="text-content">
           <h2 class="title">
@@ -13,7 +18,7 @@
           </h2>
           <p class="slogan">{{ slogan }}</p>
         </div>
-        <img class="logo" [src]="logoSrc" alt="logo" />
+        <img class="logo" [src]="logoSrc" alt="logo" draggable="false" />
       </div>
     </div>
   </div>

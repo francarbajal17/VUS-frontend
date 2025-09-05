@@ -1,6 +1,6 @@
 .get-to-know {
   background: #ffffff;
-  height: 635px;
+  height: 835px;
   display: flex;
   align-items: center;
 }
@@ -13,9 +13,10 @@
 }
 
 .logo {
-  height: 180px;
+  height: 200px;
   width: auto;
   object-fit: contain;
+  cursor: pointer;
 }
 
 .left,
@@ -33,7 +34,7 @@
 }
 
 .right .with-opacity {
-  opacity: 0.6; /* 40% de transparencia percibida */
+  opacity: 0.6;
 }
 
 .overlay {
@@ -42,7 +43,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 200px;
+  gap: 280px;
   padding: 0 40px;
 }
 
@@ -55,21 +56,34 @@
 .title {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  font-size: 52px;
+  font-size: 60px;
   color: rgba(0, 0, 0, 1);
   display: flex;
   gap: 14px;
   align-items: baseline;
   margin: 0;
+  cursor: pointer;
+  user-select: none; /* Texto no seleccionable */
+  -webkit-user-select: none; /* Para Safari */
+  -moz-user-select: none; /* Para Firefox */
+  -ms-user-select: none; /* Para IE/Edge */
 }
 
 .title-prefix {
   letter-spacing: 0.5px;
+  user-select: none; /* Texto no seleccionable */
+  -webkit-user-select: none; /* Para Safari */
+  -moz-user-select: none; /* Para Firefox */
+  -ms-user-select: none; /* Para IE/Edge */
 }
 .title-word {
   display: inline-flex;
   align-items: baseline;
   gap: 2px;
+  user-select: none; /* Texto no seleccionable */
+  -webkit-user-select: none; /* Para Safari */
+  -moz-user-select: none; /* Para Firefox */
+  -ms-user-select: none; /* Para IE/Edge */
 }
 
 /* Blur focalizado en la V */
@@ -77,18 +91,46 @@
   font-weight: 300;
   display: inline-block;
   filter: blur(4px);
+  user-select: none; /* Texto no seleccionable */
+  -webkit-user-select: none; /* Para Safari */
+  -moz-user-select: none; /* Para Firefox */
+  -ms-user-select: none; /* Para IE/Edge */
 }
 
 .slogan {
   font-family: 'Inter', sans-serif;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 22px;
   margin: 0px 0px 0px 10px;
-  color: rgba(0, 0, 0, 0.9);
+  color: rgba(0, 0, 0, 1);
   text-align: left;
+  cursor: pointer;
+  user-select: none; /* Texto no seleccionable */
+  -webkit-user-select: none; /* Para Safari */
+  -moz-user-select: none; /* Para Firefox */
+  -ms-user-select: none; /* Para IE/Edge */
 }
 
 /* Ajustes para tamaños grandes intermedios */
+@media (max-width: 1920px) {
+  .get-to-know {
+    height: 635px;
+  }
+  .overlay {
+    gap: 200px;
+    padding: 0 30px;
+  }
+  .title {
+    font-size: 48px;
+  }
+  .slogan {
+    font-size: 20px;
+  }
+  .logo {
+    height: 180px;
+  }
+}
+
 @media (max-width: 1512px) {
   .get-to-know {
     height: 500px;
@@ -100,8 +142,11 @@
   .title {
     font-size: 40px;
   }
+  .title-v {
+    filter: blur(3px);
+  }
   .slogan {
-    font-size: 18px;
+    font-size: 17px;
   }
   .logo {
     height: 140px;
@@ -119,8 +164,11 @@
   .title {
     font-size: 36px;
   }
+  .title-v {
+    filter: blur(2.5px);
+  }
   .slogan {
-    font-size: 16px;
+    font-size: 15px;
   }
   .logo {
     height: 120px;
@@ -133,44 +181,65 @@
     grid-template-columns: 1fr 2fr;
   }
   .get-to-know {
-    height: 360px;
+    height: 420px;
   }
   .overlay {
-    gap: 30px;
+    gap: 80px;
     padding: 0 20px;
   }
   .title {
     font-size: 26px;
   }
+  .title-v {
+    filter: blur(2px);
+  }
   .slogan {
-    font-size: 14px;
+    font-size: 10.5px;
   }
   .logo {
-    height: 60px;
+    height: 90px;
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 780px) {
   .get-to-know {
-    height: 280px;
+    height: 320px;
+  }
+  .overlay {
+    gap: 60px;
+    padding: 0 20px;
+  }
+  .title {
+    font-size: 23px;
+  }
+  .slogan {
+    font-size: 9.5px;
+  }
+  .logo {
+    height: 70px;
+  }
+}
+
+@media (max-width: 650px) {
+  .get-to-know {
+    height: 270px;
   }
   .overlay {
     gap: 30px;
-    padding: 0 20px;
+    padding: 0 15px;
   }
   .title {
     font-size: 20px;
   }
   .slogan {
-    font-size: 10px;
+    font-size: 8px;
   }
   .logo {
-    height: 60px;
+    height: 45px;
   }
 }
 
-/* <=480px: tamaños móviles */
-@media (max-width: 480px) {
+@media (max-width: 515px) {
   .get-to-know {
     height: 220px;
   }
@@ -179,12 +248,43 @@
     padding: 0 15px;
   }
   .title {
-    font-size: 16px;
+    font-size: 14px;
+    gap: 6px;
+  }
+  .title-v {
+    filter: blur(1.2px);
   }
   .slogan {
-    font-size: 8px;
+    font-size: 5px;
   }
   .logo {
     height: 30px;
+  }
+}
+
+@media (max-width: 360px) {
+  .get-to-know {
+    height: 160px;
+  }
+  .overlay {
+    gap: 15px;
+    padding: 0 15px;
+  }
+  .title {
+    font-size: 10px;
+    gap: 4px;
+  }
+  .title-v {
+    filter: blur(0.8px);
+  }
+  .title-word {
+    gap: 0.9px;
+  }
+  .slogan {
+    font-size: 4.5px;
+    margin-left: 3px;
+  }
+  .logo {
+    height: 25px;
   }
 }
