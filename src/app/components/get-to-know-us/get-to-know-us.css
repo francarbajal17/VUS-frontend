@@ -1,6 +1,6 @@
 .get-to-know {
   background: #ffffff;
-  height: 835px;
+  height: 60vh;
   display: flex;
   align-items: center;
 }
@@ -69,6 +69,10 @@
   -ms-user-select: none; /* Para IE/Edge */
 }
 
+.title:hover {
+  color: rgb(53, 53, 53);
+}
+
 .title-prefix {
   letter-spacing: 0.5px;
   user-select: none; /* Texto no seleccionable */
@@ -114,7 +118,7 @@
 /* Ajustes para tamaños grandes intermedios */
 @media (max-width: 1920px) {
   .get-to-know {
-    height: 635px;
+    height: 55vh;
   }
   .overlay {
     gap: 200px;
@@ -133,7 +137,7 @@
 
 @media (max-width: 1512px) {
   .get-to-know {
-    height: 500px;
+    height: 50vh;
   }
   .overlay {
     gap: 150px;
@@ -155,7 +159,7 @@
 
 @media (max-width: 1280px) {
   .get-to-know {
-    height: 400px;
+    height: 45vh;
   }
   .overlay {
     gap: 120px;
@@ -181,7 +185,7 @@
     grid-template-columns: 1fr 2fr;
   }
   .get-to-know {
-    height: 420px;
+    height: 40vh;
   }
   .overlay {
     gap: 80px;
@@ -203,7 +207,7 @@
 
 @media (max-width: 780px) {
   .get-to-know {
-    height: 320px;
+    height: 30vh;
   }
   .overlay {
     gap: 60px;
@@ -222,7 +226,7 @@
 
 @media (max-width: 650px) {
   .get-to-know {
-    height: 270px;
+    height: 25vh;
   }
   .overlay {
     gap: 30px;
@@ -241,7 +245,7 @@
 
 @media (max-width: 515px) {
   .get-to-know {
-    height: 220px;
+    height: 25vh;
   }
   .overlay {
     gap: 20px;
@@ -264,7 +268,7 @@
 
 @media (max-width: 360px) {
   .get-to-know {
-    height: 160px;
+    height: 20vh;
   }
   .overlay {
     gap: 15px;

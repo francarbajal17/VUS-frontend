@@ -15,26 +15,26 @@ import { GetToKnowUsComponent } from '../components/get-to-know-us/get-to-know-u
 export class Home {
   protected readonly tshirts: Product[] = [
     {
-      imageUrl: '/BlackFront.png',
-      imageUrlBack: '/BlackFront.png',
+      imageUrl: '/t-shirts/BlackFront.png',
+      imageUrlBack: '/t-shirts/BlackBack.png',
       title: 'Oversized Black T-Shirt',
       price: 'UYU 1290',
     },
     {
-      imageUrl: '/WhiteFront.png',
-      imageUrlBack: '/WhiteFront.png',
+      imageUrl: '/t-shirts/WhiteFront.png',
+      imageUrlBack: '/t-shirts/WhiteBack.png',
       title: 'Oversized White T-Shirt',
       price: 'UYU 1290',
     },
     {
-      imageUrl: '/OrangeFront.png',
-      imageUrlBack: '/OrangeFront.png',
+      imageUrl: '/t-shirts/OrangeFront.png',
+      imageUrlBack: '/t-shirts/OrangeBack.png',
       title: 'Oversized Orange T-Shirt',
       price: 'UYU 1290',
     },
     {
-      imageUrl: '/BlueFront.png',
-      imageUrlBack: '/BlueFront.png',
+      imageUrl: '/t-shirts/BlueFront.png',
+      imageUrlBack: '/t-shirts/BlueBack.png',
       title: 'Oversized Blue T-Shirt',
       price: 'UYU 1290',
     },
