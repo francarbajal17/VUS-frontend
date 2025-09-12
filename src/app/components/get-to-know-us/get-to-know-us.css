@@ -30,7 +30,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
 .right .with-opacity {
@@ -185,7 +184,7 @@
     grid-template-columns: 1fr 2fr;
   }
   .get-to-know {
-    height: 40vh;
+    height: 35vh;
   }
   .overlay {
     gap: 80px;
@@ -290,5 +289,23 @@
   }
   .logo {
     height: 25px;
+  }
+}
+
+@media (max-height: 800px) {
+  .get-to-know {
+    min-height: 30vh;
+  }
+}
+
+@media (max-height: 600px) {
+  .get-to-know {
+    min-height: 90vh;
+  }
+}
+
+@media (max-height: 400px) {
+  .get-to-know {
+    min-height: 100vh;
   }
 }
