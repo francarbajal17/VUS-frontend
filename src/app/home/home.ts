@@ -4,11 +4,12 @@ import { Hero } from '../components/hero/hero';
 import { ProductCategory } from '../components/product-category/product-category';
 import { Product } from '../components/product-category/product-category';
 import { GetToKnowUsComponent } from '../components/get-to-know-us/get-to-know-us';
+import { Footer } from '../components/footer/footer';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [Header, Hero, ProductCategory, GetToKnowUsComponent],
+  imports: [Header, Hero, ProductCategory, GetToKnowUsComponent, Footer],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })

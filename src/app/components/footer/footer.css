@@ -1,0 +1,147 @@
+.footer {
+  position: relative;
+  height: 60vh;
+  background-image: url('/footer.jpg');
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 0;
+}
+
+.footer-overlay {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.footer-logo {
+  height: 200px;
+  width: auto;
+  user-select: none;
+  cursor: pointer;
+}
+
+.footer-copy {
+  position: absolute;
+  bottom: 32px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.85);
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+@media (max-width: 1920px) {
+  .footer-logo {
+    height: 180px;
+  }
+  .footer-copy {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1512px) {
+  .footer {
+    height: 50vh;
+  }
+  .footer-logo {
+    height: 160px;
+  }
+  .footer-copy {
+    font-size: 13px;
+    bottom: 25px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .footer {
+    height: 40vh;
+  }
+  .footer-logo {
+    height: 150px;
+  }
+  .footer-copy {
+    font-size: 12px;
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer {
+    height: 35vh;
+  }
+  .footer-logo {
+    height: 140px;
+  }
+  .footer-copy {
+    font-size: 11px;
+    bottom: 18px;
+  }
+}
+
+@media (max-width: 780px) {
+  .footer {
+    height: 30vh;
+  }
+  .footer-logo {
+    height: 130px;
+  }
+  .footer-copy {
+    font-size: 11px;
+    bottom: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer {
+    height: 25vh;
+  }
+  .footer-logo {
+    height: 110px;
+  }
+  .footer-copy {
+    font-size: 10px;
+    bottom: 14px;
+  }
+}
+
+@media (max-width: 515px) {
+  .footer {
+    height: 20vh;
+  }
+  .footer-logo {
+    height: 100px;
+  }
+  .footer-copy {
+    font-size: 9px;
+    bottom: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .footer {
+    height: 15vh;
+  }
+  .footer-logo {
+    height: 80px;
+  }
+  .footer-copy {
+    font-size: 8px;
+    bottom: 12px;
+  }
+}
