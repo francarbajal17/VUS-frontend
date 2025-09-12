@@ -60,7 +60,7 @@
     height: 50vh;
   }
   .footer-logo {
-    height: 160px;
+    height: 140px;
   }
   .footer-copy {
     font-size: 13px;
@@ -73,7 +73,7 @@
     height: 40vh;
   }
   .footer-logo {
-    height: 150px;
+    height: 120px;
   }
   .footer-copy {
     font-size: 12px;
@@ -86,7 +86,7 @@
     height: 35vh;
   }
   .footer-logo {
-    height: 140px;
+    height: 110px;
   }
   .footer-copy {
     font-size: 11px;
@@ -99,7 +99,7 @@
     height: 30vh;
   }
   .footer-logo {
-    height: 130px;
+    height: 100px;
   }
   .footer-copy {
     font-size: 11px;
@@ -109,7 +109,7 @@
 
 @media (max-width: 640px) {
   .footer-logo {
-    height: 90px;
+    height: 80px;
   }
   .footer-copy {
     font-size: 10px;
@@ -118,11 +118,8 @@
 }
 
 @media (max-width: 515px) {
-  .footer {
-    height: 20vh;
-  }
   .footer-logo {
-    height: 80px;
+    height: 70px;
   }
   .footer-copy {
     font-size: 9px;
@@ -135,7 +132,7 @@
     height: 15vh;
   }
   .footer-logo {
-    height: 80px;
+    height: 60px;
   }
   .footer-copy {
     font-size: 8px;
