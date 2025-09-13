@@ -1,5 +1,6 @@
-import { Component, Input, signal } from '@angular/core';
+import { Component, inject, Input, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-box',
@@ -17,6 +18,8 @@ export class ProductBox {
   // Signal para controlar el estado del hover
   protected readonly isHovered = signal(false);
 
+  private router = inject(Router);
+
   // Método para manejar el hover
   onImageHover() {
     this.isHovered.set(true);
@@ -32,5 +35,13 @@ export class ProductBox {
       return this.imageUrlBack;
     }
     return this.imageUrl;
+  }
+
+  // Método para navegar a la página de detalles del producto
+  onProductClick() {
+    // Por ahora todos los productos van a la misma página
+    // En el futuro se puede usar el título o un ID específico
+    const productSlug = this.title.toLowerCase().replace(/\s+/g, '-');
+    this.router.navigate(['/products', productSlug]);
   }
 }

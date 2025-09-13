@@ -1,4 +1,4 @@
-<div class="product-box">
+<div class="product-box" (click)="onProductClick()">
   <div class="product-image" (mouseenter)="onImageHover()" (mouseleave)="onImageLeave()">
     <img [src]="getCurrentImage()" [alt]="title" draggable="false" />
   </div>
