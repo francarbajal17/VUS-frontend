@@ -1,13 +1,14 @@
 .get-to-know {
   background: #ffffff;
-  height: 60vh;
+  width: 100%;
+  aspect-ratio: 21 / 9;
   display: flex;
   align-items: center;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 3fr; /* 1/4 left, 3/4 right */
+  grid-template-columns: 1fr 3fr;
   width: 100%;
   height: 100%;
 }
@@ -114,11 +115,7 @@
   -ms-user-select: none; /* Para IE/Edge */
 }
 
-/* Ajustes para tamaños grandes intermedios */
 @media (max-width: 1920px) {
-  .get-to-know {
-    height: 55vh;
-  }
   .overlay {
     gap: 200px;
     padding: 0 30px;
@@ -135,9 +132,6 @@
 }
 
 @media (max-width: 1512px) {
-  .get-to-know {
-    height: 50vh;
-  }
   .overlay {
     gap: 150px;
     padding: 0 30px;
@@ -157,9 +151,6 @@
 }
 
 @media (max-width: 1280px) {
-  .get-to-know {
-    height: 45vh;
-  }
   .overlay {
     gap: 120px;
     padding: 0 25px;
@@ -183,9 +174,6 @@
   .grid {
     grid-template-columns: 1fr 2fr;
   }
-  .get-to-know {
-    height: 35vh;
-  }
   .overlay {
     gap: 80px;
     padding: 0 20px;
@@ -206,9 +194,6 @@
 }
 
 @media (max-width: 780px) {
-  .get-to-know {
-    height: 30vh;
-  }
   .overlay {
     gap: 60px;
     padding: 0 20px;
@@ -243,9 +228,6 @@
 }
 
 @media (max-width: 515px) {
-  .get-to-know {
-    height: 25vh;
-  }
   .overlay {
     gap: 20px;
     padding: 0 15px;
@@ -266,9 +248,6 @@
 }
 
 @media (max-width: 360px) {
-  .get-to-know {
-    height: 20vh;
-  }
   .overlay {
     gap: 15px;
     padding: 0 15px;
@@ -289,23 +268,5 @@
   }
   .logo {
     height: 25px;
-  }
-}
-
-@media (max-height: 800px) {
-  .get-to-know {
-    min-height: 30vh;
-  }
-}
-
-@media (max-height: 600px) {
-  .get-to-know {
-    min-height: 90vh;
-  }
-}
-
-@media (max-height: 400px) {
-  .get-to-know {
-    min-height: 100vh;
   }
 }

@@ -1,6 +1,7 @@
 .footer {
   position: relative;
-  height: 60vh;
+  width: 100%;
+  aspect-ratio: 21 / 9;
   background-image: url('/footer.jpg');
   background-size: cover;
   background-position: center;
@@ -56,9 +57,6 @@
 }
 
 @media (max-width: 1512px) {
-  .footer {
-    height: 50vh;
-  }
   .footer-logo {
     height: 140px;
   }
@@ -69,9 +67,6 @@
 }
 
 @media (max-width: 1280px) {
-  .footer {
-    height: 40vh;
-  }
   .footer-logo {
     height: 120px;
   }
@@ -82,9 +77,6 @@
 }
 
 @media (max-width: 1024px) {
-  .footer {
-    height: 35vh;
-  }
   .footer-logo {
     height: 110px;
   }
@@ -95,9 +87,6 @@
 }
 
 @media (max-width: 780px) {
-  .footer {
-    height: 30vh;
-  }
   .footer-logo {
     height: 100px;
   }
@@ -128,32 +117,11 @@
 }
 
 @media (max-width: 360px) {
-  .footer {
-    height: 15vh;
-  }
   .footer-logo {
     height: 60px;
   }
   .footer-copy {
     font-size: 8px;
     bottom: 12px;
-  }
-}
-
-@media (max-height: 800px) {
-  .footer {
-    min-height: 30vh;
-  }
-}
-
-@media (max-height: 600px) {
-  .footer {
-    min-height: 90vh;
-  }
-}
-
-@media (max-height: 400px) {
-  .footer {
-    min-height: 100vh;
   }
 }

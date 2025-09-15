@@ -17,9 +17,8 @@ section {
 }
 
 .container {
-  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 20px 0;
 }
 
 /* Sección 2 */
@@ -31,13 +30,20 @@ section {
 /* Sección 3 */
 .section-3 {
   background-color: #ffffff;
-  min-height: 100vh;
 }
 
 /* Sección 4 */
 .section-4 {
   background-color: #e9ecef;
   min-height: 100vh;
+}
+
+/* Responsivo - solo ancho */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 100%;
+    padding: 0 15px;
+  }
 }
 
 /* Responsivo */
