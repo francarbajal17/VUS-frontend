@@ -1,0 +1,58 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family:
+    'Inter',
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    sans-serif;
+}
+
+/* Estilos para las secciones */
+section {
+  padding: 20px 0;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* Sección 2 */
+.section-2 {
+  background-color: #ffffff;
+  padding: 0;
+}
+
+/* Sección 3 */
+.section-3 {
+  background-color: #ffffff;
+}
+
+/* Sección 4 */
+.section-4 {
+  background-color: #e9ecef;
+  min-height: 100vh;
+}
+
+/* Responsivo - solo ancho */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  section {
+    padding: 40px 0;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+}

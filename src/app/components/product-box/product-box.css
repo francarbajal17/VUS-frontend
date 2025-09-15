@@ -1,0 +1,118 @@
+.product-box {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.product-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+.product-image {
+  background-color: rgb(247, 247, 247, 1);
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 85%;
+  height: 85%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.product-info {
+  background-color: rgba(242, 242, 242, 0.4);
+  padding: 25px 20px 23px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 80px;
+}
+
+.product-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  margin: 0;
+  color: rgba(0, 0, 0, 1);
+  user-select: none; /* Texto no seleccionable */
+  -webkit-user-select: none; /* Para Safari */
+  -moz-user-select: none; /* Para Firefox */
+  -ms-user-select: none; /* Para IE/Edge */
+}
+
+.product-price {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+  color: rgba(0, 0, 0, 1);
+  user-select: none; /* Texto no seleccionable */
+  -webkit-user-select: none; /* Para Safari */
+  -moz-user-select: none; /* Para Firefox */
+  -ms-user-select: none; /* Para IE/Edge */
+}
+
+/* Responsive design para product-box */
+@media (max-width: 1512px) {
+  .product-title,
+  .product-price {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 1240px) {
+  .product-info {
+    padding: 20px 16px 18px 24px;
+    min-height: 70px;
+  }
+
+  .product-title,
+  .product-price {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-info {
+    padding: 18px 14px 16px 20px;
+    min-height: 65px;
+  }
+
+  .product-title,
+  .product-price {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-info {
+    padding: 16px 12px 14px 18px;
+    min-height: 60px;
+  }
+
+  .product-title,
+  .product-price {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  .product-info {
+    padding: 16px 12px 14px 18px;
+    min-height: 60px;
+  }
+
+  .product-title,
+  .product-price {
+    font-size: 8px;
+  }
+}

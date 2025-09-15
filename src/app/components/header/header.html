@@ -1,0 +1,19 @@
+<header class="top-header" [class]="headerClass()">
+  <div class="bar bar--white" [class.bar--hidden]="!whiteBarVisible()">NEW ARRIVALS LIVE NOW</div>
+  <div
+    class="bar bar--black"
+    [style.background-color]="
+      logoHovered() ? 'rgba(0, 0, 0, 0.3)' : 'rgba(0, 0, 0, ' + blackBarOpacity() + ')'
+    "
+  >
+    <img
+      [src]="logoHovered() ? '/blackLogo.png' : '/whiteLogo.png'"
+      alt="Logo"
+      class="white--logo"
+      (mouseenter)="onLogoMouseEnter()"
+      (mouseleave)="onLogoMouseLeave()"
+      (click)="onLogoClick()"
+      draggable="false"
+    />
+  </div>
+</header>
