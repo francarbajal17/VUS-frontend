@@ -1,5 +1,74 @@
-<div class="product-detail">
-  <h1>Product Detail</h1>
-  <p>Product: {{ productName }}</p>
-  <p>This page will show detailed information for the selected product.</p>
+<div class="product-detail-page" *ngIf="product">
+  <!-- Sección 1 -->
+  <section class="section-1">
+    <div class="image-left">
+      <img [src]="product.frontImage" [alt]="product.name" />
+    </div>
+    <div class="image-right">
+      <img [src]="product.backImage" [alt]="product.name + ' back'" />
+      <!-- Barra de información superpuesta -->
+      <div class="product-info-bar">
+        <div class="product-header">
+          <div class="product-title-price">
+            <h1 class="product-title">{{ product.name }}</h1>
+            <p class="product-price">{{ product.price }}</p>
+          </div>
+          <div class="product-logo">
+            <img src="/blackLogo.png" alt="VÜS Logo" />
+          </div>
+        </div>
+
+        <div class="size-selection">
+          <p class="size-label">Size</p>
+          <div class="size-buttons">
+            <button
+              *ngFor="let size of product.sizes"
+              [class.selected]="selectedSize() === size"
+              (click)="onSizeSelect(size)"
+              class="size-button"
+            >
+              {{ size }}
+            </button>
+          </div>
+        </div>
+
+        <div class="shipping-info">
+          <p>{{ product.shippingInfo }}</p>
+        </div>
+
+        <button class="consultar-button" (click)="onConsultar()">
+          <svg
+            class="chat-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+          </svg>
+          CONSULTAR
+        </button>
+
+        <div class="payment-info">
+          <p>{{ product.paymentMethod }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-2">
+    <div class="image-left">
+      <img [src]="product.backImage" [alt]="product.name + ' back'" />
+    </div>
+    <div class="image-right">
+      <img [src]="product.frontImage" [alt]="product.name" />
+    </div>
+  </section>
+
+  <app-footer></app-footer>
+</div>
+
+<div class="product-not-found" *ngIf="!product">
+  <h1>Producto no encontrado</h1>
+  <p>El producto "{{ productName }}" no existe.</p>
 </div>

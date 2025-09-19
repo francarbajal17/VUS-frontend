@@ -39,8 +39,6 @@ export class ProductBox {
 
   // Método para navegar a la página de detalles del producto
   onProductClick() {
-    // Por ahora todos los productos van a la misma página
-    // En el futuro se puede usar el título o un ID específico
     const productSlug = this.title.toLowerCase().replace(/\s+/g, '-');
     this.router.navigate(['/products', productSlug]);
   }
