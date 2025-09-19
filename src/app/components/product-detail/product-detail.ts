@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService, Product } from '../../services/product.service';
 import { Footer } from '../footer/footer';
+import { Header } from '../header/header';
 
 @Component({
   selector: 'app-product-detail',
-  imports: [CommonModule, Footer],
+  imports: [CommonModule, Footer, Header],
   standalone: true,
   templateUrl: './product-detail.html',
   styleUrl: './product-detail.css',

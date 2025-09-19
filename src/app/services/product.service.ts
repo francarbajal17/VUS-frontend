@@ -6,12 +6,12 @@ export interface Product {
   price: string;
   category: 'tshirts' | 'hoodies';
   color: string;
-  frontImage: string;
-  backImage: string;
+  ImageSection1Left: string;
+  ImageSection1Right: string;
+  ImageSection2Left: string;
+  ImageSection2Right: string;
   description: string;
   sizes: string[];
-  shippingInfo: string;
-  paymentMethod: string;
 }
 
 @Injectable({
@@ -25,13 +25,12 @@ export class ProductService {
     price: 'UYU 1290',
     category: 'tshirts',
     color: 'Orange',
-    frontImage: '/t-shirts/OrangeFront.png',
-    backImage: '/t-shirts/OrangeBack.png',
+    ImageSection1Left: '/products/VUSaltosec1.png',
+    ImageSection1Right: '/products/VUSanchosec1.png',
+    ImageSection2Left: '/products/VUSanchosec2.png',
+    ImageSection2Right: '/products/VUSaltosec2.png',
     description: 'Camiseta oversized de algodón con corte holgado y diseño minimalista.',
     sizes: ['S', 'M', 'L'],
-    shippingInfo:
-      'Envíos todo el país. Se coordina al momento de realizar el pedido. Por la zona a cargo nuestro, envíos al interior o demás mediante DAC abonados por el cliente al momento de recibir el pedido.',
-    paymentMethod: 'Transferencia bancaria o efectivo en la entrega.',
   };
 
   //getProductById(): Product | undefined {

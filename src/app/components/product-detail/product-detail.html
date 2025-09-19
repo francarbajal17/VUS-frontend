@@ -1,11 +1,10 @@
 <div class="product-detail-page" *ngIf="product">
-  <!-- Sección 1 -->
   <section class="section-1">
     <div class="image-left">
-      <img [src]="product.frontImage" [alt]="product.name" />
+      <img [src]="product.ImageSection1Left" [alt]="product.name + ' left section 1'" />
     </div>
     <div class="image-right">
-      <img [src]="product.backImage" [alt]="product.name + ' back'" />
+      <img [src]="product.ImageSection1Right" [alt]="product.name + ' right section 1`'" />
       <!-- Barra de información superpuesta -->
       <div class="product-info-bar">
         <div class="product-header">
@@ -33,24 +32,17 @@
         </div>
 
         <div class="shipping-info">
-          <p>{{ product.shippingInfo }}</p>
+          <p>
+            Envíos todo el país. Se coordina al momento de realizar el pedido. Por la zona a cargo
+            nuestro, envíos al interior o demás mediante DAC abonados por el cliente al momento de
+            recibir el pedido.
+          </p>
         </div>
 
-        <button class="consultar-button" (click)="onConsultar()">
-          <svg
-            class="chat-icon"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-          </svg>
-          CONSULTAR
-        </button>
+        <button class="consultar-button" (click)="onConsultar()">CONSULTAR</button>
 
         <div class="payment-info">
-          <p>{{ product.paymentMethod }}</p>
+          <p>Métodos de pago: Transferencia bancaria o efectivo en la entrega.</p>
         </div>
       </div>
     </div>
@@ -58,10 +50,10 @@
 
   <section class="section-2">
     <div class="image-left">
-      <img [src]="product.backImage" [alt]="product.name + ' back'" />
+      <img [src]="product.ImageSection2Left" [alt]="product.name + ' left section 2'" />
     </div>
     <div class="image-right">
-      <img [src]="product.frontImage" [alt]="product.name" />
+      <img [src]="product.ImageSection2Right" [alt]="product.name + ' right section 2'" />
     </div>
   </section>
 
