@@ -77,6 +77,9 @@
 }
 
 @media (max-width: 1024px) {
+  .footer {
+    aspect-ratio: 5/3;
+  }
   .footer-logo {
     height: 110px;
   }
