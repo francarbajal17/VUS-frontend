@@ -233,8 +233,8 @@
     gap: 4px;
   }
   .size-button {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
   }
   .consultar-button {
     font-size: 12px;
@@ -265,9 +265,9 @@
     font-size: 12px;
   }
   .size-button {
-    font-size: 10px;
-    width: 40px;
-    height: 40px;
+    font-size: 12px;
+    width: 55px;
+    height: 55px;
   }
   .consultar-button {
     padding: 20px 15px;
@@ -293,9 +293,9 @@
     font-size: 10px;
   }
   .size-button {
-    font-size: 8px;
-    width: 40px;
-    height: 40px;
+    font-size: 10px;
+    width: 50px;
+    height: 50px;
   }
   .consultar-button {
     padding: 20px 15px;
@@ -319,17 +319,22 @@
     height: 30px !important;
   }
   .size-selection {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
   .size-label {
     font-size: 8px;
+  }
+  .size-button {
+    font-size: 10px;
+    width: 40px;
+    height: 40px;
   }
   .consultar-button {
     padding: 18px 12px;
     font-size: 8px;
   }
   .shipping-info {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
   .shipping-info p {
     font-size: 8px;

@@ -1,5 +1,5 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, inject, OnInit, signal, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService, Product } from '../../services/product.service';
 import { Footer } from '../footer/footer';
@@ -14,6 +14,7 @@ import { Footer } from '../footer/footer';
 export class ProductDetail implements OnInit {
   private route = inject(ActivatedRoute);
   private productService = inject(ProductService);
+  private platformId = inject(PLATFORM_ID);
 
   protected product: Product | undefined;
   protected selectedSize = signal<string>('');
@@ -57,15 +58,19 @@ export class ProductDetail implements OnInit {
         // Configurar imágenes para carrusel 3 (anchas)
         this.carousel3Images = [this.product.ImageSection1Right, this.product.ImageSection2Left];
 
-        // Obtener el ancho del carrusel después de que se renderice
-        setTimeout(() => {
-          this.updateCarouselWidth();
-        }, 100);
+        // Obtener el ancho del carrusel después de que se renderice (solo en el navegador)
+        if (isPlatformBrowser(this.platformId)) {
+          setTimeout(() => {
+            this.updateCarouselWidth();
+          }, 100);
+        }
       }
     });
   }
 
   private updateCarouselWidth(): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+
     const carouselContainer = document.querySelector('.carousel-container') as HTMLElement;
     if (carouselContainer) {
       this.carouselWidth = carouselContainer.offsetWidth;
@@ -236,6 +241,8 @@ export class ProductDetail implements OnInit {
 
   // Métodos de transformación específicos para Carrusel 1
   private updateCarouselTransform1(): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+
     const carouselTrack = document.querySelector(
       '.mobile-section-1 .carousel-track',
     ) as HTMLElement;
@@ -261,6 +268,8 @@ export class ProductDetail implements OnInit {
   }
 
   private resetCarouselTransform1(): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+
     const carouselTrack = document.querySelector(
       '.mobile-section-1 .carousel-track',
     ) as HTMLElement;
@@ -281,6 +290,8 @@ export class ProductDetail implements OnInit {
 
   // Métodos de transformación específicos para Carrusel 3
   private updateCarouselTransform3(): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+
     const carouselTrack = document.querySelector(
       '.mobile-section-3 .carousel-track',
     ) as HTMLElement;
@@ -306,6 +317,8 @@ export class ProductDetail implements OnInit {
   }
 
   private resetCarouselTransform3(): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+
     const carouselTrack = document.querySelector(
       '.mobile-section-3 .carousel-track',
     ) as HTMLElement;
