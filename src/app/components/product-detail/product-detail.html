@@ -84,11 +84,17 @@
     <section class="mobile-section-1">
       <div
         class="carousel-container"
-        (touchstart)="onTouchStart($event)"
-        (touchend)="onTouchEnd($event)"
+        (touchstart)="onTouchStart1($event)"
+        (touchmove)="onTouchMove1($event)"
+        (touchend)="onTouchEnd1($event)"
       >
-        <div class="carousel-image">
-          <img [src]="carousel1Images[carousel1Index()]" [alt]="product.name" draggable="false" />
+        <div
+          class="carousel-track"
+          [style.transform]="'translateX(' + -carousel1Index() * 100 + '%)'"
+        >
+          <div class="carousel-image" *ngFor="let image of carousel1Images">
+            <img [src]="image" [alt]="product.name" draggable="false" />
+          </div>
         </div>
         <div class="carousel-dots" *ngIf="carousel1Images.length > 1">
           <span
@@ -149,11 +155,17 @@
     <section class="mobile-section-3">
       <div
         class="carousel-container"
-        (touchstart)="onTouchStart($event)"
-        (touchend)="onTouchEnd($event)"
+        (touchstart)="onTouchStart3($event)"
+        (touchmove)="onTouchMove3($event)"
+        (touchend)="onTouchEnd3($event)"
       >
-        <div class="carousel-image">
-          <img [src]="carousel3Images[carousel3Index()]" [alt]="product.name" draggable="false" />
+        <div
+          class="carousel-track"
+          [style.transform]="'translateX(' + -carousel3Index() * 100 + '%)'"
+        >
+          <div class="carousel-image" *ngFor="let image of carousel3Images">
+            <img [src]="image" [alt]="product.name" draggable="false" />
+          </div>
         </div>
         <div class="carousel-dots" *ngIf="carousel3Images.length > 1">
           <span

@@ -104,7 +104,8 @@
   width: 65px;
   height: 65px;
   background-color: rgba(255, 255, 255, 1);
-  border: 0.25px solid rgba(0, 0, 0, 0.1);
+  border: 0px;
+  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.1);
   font-family: 'Inter', sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -263,9 +264,6 @@
   .size-label {
     font-size: 12px;
   }
-  .size-buttons {
-    gap: 2px;
-  }
   .size-button {
     font-size: 10px;
     width: 40px;
@@ -293,9 +291,6 @@
   }
   .size-label {
     font-size: 10px;
-  }
-  .size-buttons {
-    gap: 2px;
   }
   .size-button {
     font-size: 8px;
@@ -328,9 +323,6 @@
   }
   .size-label {
     font-size: 8px;
-  }
-  .size-buttons {
-    gap: 1px;
   }
   .consultar-button {
     padding: 18px 12px;
@@ -372,12 +364,23 @@
   position: relative;
   width: 100%;
   height: 100%;
+  overflow: hidden;
+  touch-action: pan-y; /* Permitir scroll vertical pero controlar horizontal */
+}
+
+.carousel-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease-out;
+  will-change: transform; /* Optimización para animaciones */
 }
 
 .carousel-image {
-  width: 100%;
+  min-width: 100%;
   height: 100%;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .carousel-image img {
@@ -479,7 +482,8 @@
 .mobile-product-info .size-button {
   width: 65px;
   height: 65px;
-  border: 1px solid rgba(228, 228, 228, 1);
+  border: 0px;
+  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.1);
   background-color: rgba(255, 255, 255, 1);
   color: #333;
   font-family: 'Inter', sans-serif;
@@ -562,12 +566,23 @@
   position: relative;
   width: 100%;
   height: 100%;
+  overflow: hidden;
+  touch-action: pan-y; /* Permitir scroll vertical pero controlar horizontal */
 }
 
-.mobile-section-3 .carousel-image {
+.mobile-section-3 .carousel-track {
+  display: flex;
   width: 100%;
   height: 100%;
+  transition: transform 0.3s ease-out;
+  will-change: transform; /* Optimización para animaciones */
+}
+
+.carousel-image {
+  min-width: 100%;
+  height: 100%;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .mobile-section-3 .carousel-image img {
@@ -618,9 +633,6 @@
   }
   .mobile-product-info .size-label {
     font-size: 14px;
-  }
-  .mobile-product-info .size-buttons {
-    gap: 2px;
   }
   .mobile-product-info .size-button {
     width: 55px;
