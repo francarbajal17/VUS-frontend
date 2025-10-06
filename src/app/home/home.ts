@@ -27,18 +27,6 @@ export class Home {
       title: 'Oversized White T-Shirt',
       price: 'UYU 1290',
     },
-    {
-      imageUrl: '/t-shirts/OrangeFront.png',
-      imageUrlBack: '/t-shirts/OrangeBack.png',
-      title: 'Oversized Orange T-Shirt',
-      price: 'UYU 1290',
-    },
-    {
-      imageUrl: '/t-shirts/BlueFront.png',
-      imageUrlBack: '/t-shirts/BlueBack.png',
-      title: 'Oversized Blue T-Shirt',
-      price: 'UYU 1290',
-    },
   ];
 
   protected readonly hoodies: Product[] = [
@@ -58,12 +46,6 @@ export class Home {
       imageUrl: '/hoodies/BlueFront.png',
       imageUrlBack: '/hoodies/BlueBack.png',
       title: 'Oversized Blue Hoodie',
-      price: 'UYU 2090',
-    },
-    {
-      imageUrl: '/hoodies/GreenFront.png',
-      imageUrlBack: '/hoodies/GreenBack.png',
-      title: 'Oversized Green Hoodie',
       price: 'UYU 2090',
     },
   ];

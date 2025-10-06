@@ -7,7 +7,7 @@
 .hero-background {
   width: 100%;
   height: 100%;
-  background-image: url('/backgroundimage.png');
+  background-image: url('https://storage.googleapis.com/vus-images/hero/backgroundimage.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

@@ -18,8 +18,10 @@
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-auto-columns: 24.9%;
+  grid-auto-flow: column;
   gap: 3px;
+  justify-content: center;
 }
 
 @media (max-width: 1024px) {
