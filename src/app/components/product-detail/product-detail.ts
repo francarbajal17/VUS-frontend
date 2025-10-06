@@ -118,6 +118,8 @@ export class ProductDetail implements OnInit {
 
   // Métodos para touch/swipe del Carrusel 1 (imágenes altas)
   onTouchStart1(event: TouchEvent): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+
     event.preventDefault();
     this.touchStartX1 = event.touches[0].clientX;
     this.touchCurrentX1 = this.touchStartX1;
@@ -131,7 +133,7 @@ export class ProductDetail implements OnInit {
   }
 
   onTouchMove1(event: TouchEvent): void {
-    if (!this.isDragging1) return;
+    if (!isPlatformBrowser(this.platformId) || !this.isDragging1) return;
 
     event.preventDefault();
     this.touchCurrentX1 = event.touches[0].clientX;
@@ -142,7 +144,7 @@ export class ProductDetail implements OnInit {
   }
 
   onTouchEnd1(event: TouchEvent): void {
-    if (!this.isDragging1) return;
+    if (!isPlatformBrowser(this.platformId) || !this.isDragging1) return;
 
     this.isDragging1 = false;
     this.touchEndX1 = event.changedTouches[0].clientX;
@@ -167,6 +169,8 @@ export class ProductDetail implements OnInit {
 
   // Métodos para touch/swipe del Carrusel 3 (imágenes anchas)
   onTouchStart3(event: TouchEvent): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+
     event.preventDefault();
     this.touchStartX3 = event.touches[0].clientX;
     this.touchCurrentX3 = this.touchStartX3;
@@ -180,7 +184,7 @@ export class ProductDetail implements OnInit {
   }
 
   onTouchMove3(event: TouchEvent): void {
-    if (!this.isDragging3) return;
+    if (!isPlatformBrowser(this.platformId) || !this.isDragging3) return;
 
     event.preventDefault();
     this.touchCurrentX3 = event.touches[0].clientX;
@@ -191,7 +195,7 @@ export class ProductDetail implements OnInit {
   }
 
   onTouchEnd3(event: TouchEvent): void {
-    if (!this.isDragging3) return;
+    if (!isPlatformBrowser(this.platformId) || !this.isDragging3) return;
 
     this.isDragging3 = false;
     this.touchEndX3 = event.changedTouches[0].clientX;
@@ -241,8 +245,6 @@ export class ProductDetail implements OnInit {
 
   // Métodos de transformación específicos para Carrusel 1
   private updateCarouselTransform1(): void {
-    if (!isPlatformBrowser(this.platformId)) return;
-
     const carouselTrack = document.querySelector(
       '.mobile-section-1 .carousel-track',
     ) as HTMLElement;
@@ -268,8 +270,6 @@ export class ProductDetail implements OnInit {
   }
 
   private resetCarouselTransform1(): void {
-    if (!isPlatformBrowser(this.platformId)) return;
-
     const carouselTrack = document.querySelector(
       '.mobile-section-1 .carousel-track',
     ) as HTMLElement;
@@ -290,8 +290,6 @@ export class ProductDetail implements OnInit {
 
   // Métodos de transformación específicos para Carrusel 3
   private updateCarouselTransform3(): void {
-    if (!isPlatformBrowser(this.platformId)) return;
-
     const carouselTrack = document.querySelector(
       '.mobile-section-3 .carousel-track',
     ) as HTMLElement;
@@ -317,8 +315,6 @@ export class ProductDetail implements OnInit {
   }
 
   private resetCarouselTransform3(): void {
-    if (!isPlatformBrowser(this.platformId)) return;
-
     const carouselTrack = document.querySelector(
       '.mobile-section-3 .carousel-track',
     ) as HTMLElement;
