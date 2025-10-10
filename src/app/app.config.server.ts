@@ -3,7 +3,7 @@ import { provideServerRendering, withRoutes } from '@angular/ssr';
 import { provideRouter, withInMemoryScrolling } from '@angular/router';
 import { routes } from './app.routes';
 import { serverRoutes } from './app.routes.server';
-
+import { provideHttpClient, withFetch } from '@angular/common/http';
 export const config: ApplicationConfig = {
   providers: [
     provideRouter(
@@ -13,5 +13,6 @@ export const config: ApplicationConfig = {
       }),
     ),
     provideServerRendering(withRoutes(serverRoutes)),
+    provideHttpClient(withFetch()),
   ],
 };

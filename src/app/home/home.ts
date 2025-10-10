@@ -1,52 +1,83 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 import { Header } from '../components/header/header';
 import { Hero } from '../components/hero/hero';
 import { ProductCategory } from '../components/product-category/product-category';
-import { Product } from '../components/product-category/product-category';
 import { GetToKnowUsComponent } from '../components/get-to-know-us/get-to-know-us';
 import { Footer } from '../components/footer/footer';
+
+interface BackendResponse {
+  [categoryName: string]: BackendItem[];
+}
+
+interface BackendItem {
+  _id: string;
+  name: string;
+  category: {
+    _id: string;
+    name: string;
+    createdAt: string;
+    updatedAt: string;
+    __v: number;
+  };
+  principalItem: boolean;
+  sizes: string[];
+  frontImage: string;
+  backImage: string;
+  section1LeftImage: string;
+  section1RightImage: string;
+  section2LeftImage: string;
+  section2RightImage: string;
+  price: number;
+  drop: string;
+  createdAt: string;
+  updatedAt: string;
+  __v: number;
+}
+
+type ProductCategoryProduct = import('../components/product-category/product-category').Product;
+
+function toDisplayProduct(item: BackendItem): ProductCategoryProduct {
+  return {
+    title: item.name,
+    price: `UYU ${item.price}`,
+    imageUrl: item.frontImage,
+    imageUrlBack: item.backImage,
+  };
+}
+
+function transformBackendData(data: BackendResponse): Record<string, ProductCategoryProduct[]> {
+  const result: Record<string, ProductCategoryProduct[]> = {};
+  for (const [categoryName, items] of Object.entries(data)) {
+    result[categoryName] = items.map(toDisplayProduct);
+  }
+  return result;
+}
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [Header, Hero, ProductCategory, GetToKnowUsComponent, Footer],
+  imports: [CommonModule, Header, Hero, ProductCategory, GetToKnowUsComponent, Footer],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
-export class Home {
-  protected readonly tshirts: Product[] = [
-    {
-      imageUrl: '/t-shirts/BlackFront.png',
-      imageUrlBack: '/t-shirts/BlackBack.png',
-      title: 'Oversized Black T-Shirt',
-      price: 'UYU 1290',
-    },
-    {
-      imageUrl: '/t-shirts/WhiteFront.png',
-      imageUrlBack: '/t-shirts/WhiteBack.png',
-      title: 'Oversized White T-Shirt',
-      price: 'UYU 1290',
-    },
-  ];
+export class Home implements OnInit {
+  principalItems: Record<string, ProductCategoryProduct[]> = {};
+  categoryNames: string[] = [];
+  private http = inject(HttpClient);
 
-  protected readonly hoodies: Product[] = [
-    {
-      imageUrl: '/hoodies/BlackFront.png',
-      imageUrlBack: '/hoodies/BlackBack.png',
-      title: 'Oversized Black Hoodie',
-      price: 'UYU 2090',
-    },
-    {
-      imageUrl: '/hoodies/BeigeFront.png',
-      imageUrlBack: '/hoodies/BeigeBack.png',
-      title: 'Oversized Mushroom Hoodie',
-      price: 'UYU 2090',
-    },
-    {
-      imageUrl: '/hoodies/BlueFront.png',
-      imageUrlBack: '/hoodies/BlueBack.png',
-      title: 'Oversized Blue Hoodie',
-      price: 'UYU 2090',
-    },
-  ];
+  ngOnInit(): void {
+    this.fetchPrincipalItems();
+  }
+
+  fetchPrincipalItems(): void {
+    this.http.get<BackendResponse>('https://vus-backend.vercel.app/api/principal-items').subscribe({
+      next: (data) => {
+        this.principalItems = transformBackendData(data);
+        this.categoryNames = Object.keys(this.principalItems);
+      },
+      error: (error) => console.error('Error fetching principal items:', error),
+    });
+  }
 }
