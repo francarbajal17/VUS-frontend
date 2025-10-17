@@ -80,31 +80,14 @@
 
   <!-- Versión móvil (pantallas < 1024px) -->
   <div class="mobile-version">
-    <!-- Sección 1: Carrusel de imágenes altas -->
+    <!-- Sección 1: Imagen superior -->
     <section class="mobile-section-1">
-      <div
-        class="carousel-container"
-        (touchstart)="onTouchStart1($event)"
-        (touchmove)="onTouchMove1($event)"
-        (touchend)="onTouchEnd1($event)"
-      >
-        <div
-          class="carousel-track"
-          [style.transform]="'translateX(' + -carousel1Index() * 100 + '%)'"
-        >
-          <div class="carousel-image" *ngFor="let image of carousel1Images">
-            <img [src]="image" [alt]="product.name" draggable="false" />
-          </div>
-        </div>
-        <div class="carousel-dots" *ngIf="carousel1Images.length > 1">
-          <span
-            *ngFor="let dot of carousel1Images; let i = index"
-            [class.active]="carousel1Index() === i"
-            class="dot"
-            (click)="carousel1Index.set(i)"
-          >
-          </span>
-        </div>
+      <div class="mobile-image-container">
+        <img
+          [src]="product.ImageSection1Left"
+          [alt]="product.name + ' section 1'"
+          draggable="false"
+        />
       </div>
     </section>
 
@@ -151,33 +134,14 @@
       </div>
     </section>
 
-    <!-- Sección 3: Carrusel de imágenes anchas -->
+    <!-- Sección 3: Imagen inferior -->
     <section class="mobile-section-3">
-      <div
-        class="carousel-container"
-        (touchstart)="onTouchStart3($event)"
-        (touchmove)="onTouchMove3($event)"
-        (touchend)="onTouchEnd3($event)"
-      >
-        <div
-          class="carousel-track"
-          [style.transform]="'translateX(' + -carousel3Index() * 100 + '%)'"
-        >
-          @for (image of carousel3Images; track image) {
-            <div class="carousel-image">
-              <img [src]="image" [alt]="product.name" draggable="false" />
-            </div>
-          }
-        </div>
-        <div class="carousel-dots" *ngIf="carousel3Images.length > 1">
-          <span
-            *ngFor="let dot of carousel3Images; let i = index"
-            [class.active]="carousel3Index() === i"
-            class="dot"
-            (click)="carousel3Index.set(i)"
-          >
-          </span>
-        </div>
+      <div class="mobile-image-container">
+        <img
+          [src]="product.ImageSection1Right"
+          [alt]="product.name + ' section 2'"
+          draggable="false"
+        />
       </div>
     </section>
 
