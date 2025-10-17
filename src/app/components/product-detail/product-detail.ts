@@ -19,6 +19,7 @@ export class ProductDetail implements OnInit {
   protected product: Product | undefined;
   protected selectedSize = signal<string>('');
   protected productName: string = '';
+  protected productId: string = '';
 
   // Carrusel 1 (imágenes altas)
   protected carousel1Index = signal<number>(0);
@@ -48,23 +49,23 @@ export class ProductDetail implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
-      this.productName = params['productName'] || '';
-      this.product = this.productService.getProductByName();
+      const id = params['productId'];
+      console.log(id);
 
-      if (this.product) {
-        // Configurar imágenes para carrusel 1 (altas)
-        this.carousel1Images = [this.product.ImageSection1Left, this.product.ImageSection2Right];
+      this.productService.getProductById(id).subscribe({
+        next: (product) => {
+          this.product = product;
+          this.carousel1Images = [product.ImageSection1Left, product.ImageSection2Right];
+          this.carousel3Images = [product.ImageSection1Right, product.ImageSection2Left];
 
-        // Configurar imágenes para carrusel 3 (anchas)
-        this.carousel3Images = [this.product.ImageSection1Right, this.product.ImageSection2Left];
-
-        // Obtener el ancho del carrusel después de que se renderice (solo en el navegador)
-        if (isPlatformBrowser(this.platformId)) {
-          setTimeout(() => {
-            this.updateCarouselWidth();
-          }, 100);
-        }
-      }
+          if (isPlatformBrowser(this.platformId)) {
+            setTimeout(() => {
+              this.updateCarouselWidth();
+            }, 100);
+          }
+        },
+        error: (error) => console.error('Error al cargar el producto:', error),
+      });
     });
   }
 

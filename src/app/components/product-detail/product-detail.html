@@ -163,9 +163,11 @@
           class="carousel-track"
           [style.transform]="'translateX(' + -carousel3Index() * 100 + '%)'"
         >
-          <div class="carousel-image" *ngFor="let image of carousel3Images">
-            <img [src]="image" [alt]="product.name" draggable="false" />
-          </div>
+          @for (image of carousel3Images; track image) {
+            <div class="carousel-image">
+              <img [src]="image" [alt]="product.name" draggable="false" />
+            </div>
+          }
         </div>
         <div class="carousel-dots" *ngIf="carousel3Images.length > 1">
           <span

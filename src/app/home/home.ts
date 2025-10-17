@@ -44,6 +44,7 @@ function toDisplayProduct(item: BackendItem): ProductCategoryProduct {
     price: `UYU ${item.price}`,
     imageUrl: item.frontImage,
     imageUrlBack: item.backImage,
+    id: item._id,
   };
 }
 
@@ -75,6 +76,7 @@ export class Home implements OnInit {
     this.http.get<BackendResponse>('https://vus-backend.vercel.app/api/principal-items').subscribe({
       next: (data) => {
         this.principalItems = transformBackendData(data);
+        console.log(this.principalItems);
         this.categoryNames = Object.keys(this.principalItems);
       },
       error: (error) => console.error('Error fetching principal items:', error),

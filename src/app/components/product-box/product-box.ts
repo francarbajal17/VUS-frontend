@@ -14,6 +14,7 @@ export class ProductBox {
   @Input() imageUrlBack: string = '';
   @Input() title: string = '';
   @Input() price: string = '';
+  @Input() id: string = '';
 
   // Signal para controlar el estado del hover
   protected readonly isHovered = signal(false);
@@ -39,7 +40,6 @@ export class ProductBox {
 
   // Método para navegar a la página de detalles del producto
   onProductClick() {
-    const productSlug = this.title.toLowerCase().replace(/\s+/g, '-');
-    this.router.navigate(['/products', productSlug]);
+    this.router.navigate(['/products', this.id]);
   }
 }

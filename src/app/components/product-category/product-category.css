@@ -24,16 +24,13 @@
   justify-content: center;
 }
 
-@media (max-width: 1024px) {
-  .products-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
 @media (max-width: 768px) {
   .products-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px 3px;
+    display: grid;
+    grid-auto-columns: 49.9%;
+    grid-auto-flow: column;
+    gap: 3px;
+    justify-content: center;
   }
 
   .category-title {
@@ -43,10 +40,6 @@
 }
 
 @media (max-width: 480px) {
-  .products-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .category-title {
     font-size: 20px;
     margin-bottom: 16px;

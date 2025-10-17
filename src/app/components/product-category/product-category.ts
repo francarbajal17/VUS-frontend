@@ -7,6 +7,7 @@ export interface Product {
   imageUrlBack: string;
   title: string;
   price: string;
+  id: string;
 }
 
 @Component({
