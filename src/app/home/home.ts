@@ -6,6 +6,9 @@ import { Hero } from '../components/hero/hero';
 import { ProductCategory } from '../components/product-category/product-category';
 import { GetToKnowUsComponent } from '../components/get-to-know-us/get-to-know-us';
 import { Footer } from '../components/footer/footer';
+import { LoadingComponent } from '../components/loading/loading';
+import { LoadingService } from '../services/loading.service';
+import { ImageLoaderService } from '../services/image-loader.service';
 
 interface BackendResponse {
   [categoryName: string]: BackendItem[];
@@ -59,7 +62,15 @@ function transformBackendData(data: BackendResponse): Record<string, ProductCate
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, Header, Hero, ProductCategory, GetToKnowUsComponent, Footer],
+  imports: [
+    CommonModule,
+    Header,
+    Hero,
+    ProductCategory,
+    GetToKnowUsComponent,
+    Footer,
+    LoadingComponent,
+  ],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
@@ -67,19 +78,30 @@ export class Home implements OnInit {
   principalItems: Record<string, ProductCategoryProduct[]> = {};
   categoryNames: string[] = [];
   private http = inject(HttpClient);
+  protected loadingService = inject(LoadingService);
+  private imageLoaderService = inject(ImageLoaderService);
 
   ngOnInit(): void {
     this.fetchPrincipalItems();
   }
 
   fetchPrincipalItems(): void {
+    this.loadingService.startLoading('Loading products...');
+
     this.http.get<BackendResponse>('https://vus-backend.vercel.app/api/principal-items').subscribe({
-      next: (data) => {
+      next: async (data) => {
         this.principalItems = transformBackendData(data);
         console.log(this.principalItems);
         this.categoryNames = Object.keys(this.principalItems);
+
+        // Precargar imágenes front/back de las cards de Home
+        const allProducts = Object.values(this.principalItems).flat();
+        await this.imageLoaderService.preloadHomeCardImages(allProducts, 'Loading images...');
       },
-      error: (error) => console.error('Error fetching principal items:', error),
+      error: (error) => {
+        console.error('Error fetching principal items:', error);
+        this.loadingService.stopLoading();
+      },
     });
   }
 }

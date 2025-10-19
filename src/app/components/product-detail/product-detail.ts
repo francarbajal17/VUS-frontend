@@ -3,10 +3,13 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService, Product } from '../../services/product.service';
 import { Footer } from '../footer/footer';
+import { LoadingComponent } from '../loading/loading';
+import { LoadingService } from '../../services/loading.service';
+import { ImageLoaderService } from '../../services/image-loader.service';
 
 @Component({
   selector: 'app-product-detail',
-  imports: [CommonModule, Footer],
+  imports: [CommonModule, Footer, LoadingComponent],
   standalone: true,
   templateUrl: './product-detail.html',
   styleUrl: './product-detail.css',
@@ -14,6 +17,8 @@ import { Footer } from '../footer/footer';
 export class ProductDetail implements OnInit {
   private route = inject(ActivatedRoute);
   private productService = inject(ProductService);
+  protected loadingService = inject(LoadingService);
+  private imageLoaderService = inject(ImageLoaderService);
 
   protected product: Product | undefined;
   protected selectedSize = signal<string>('');
@@ -25,11 +30,19 @@ export class ProductDetail implements OnInit {
       const id = params['productId'];
       console.log(id);
 
+      this.loadingService.startLoading('Loading product...');
+
       this.productService.getProductById(id).subscribe({
-        next: (product) => {
+        next: async (product) => {
           this.product = product;
+
+          // Precargar imágenes del producto
+          await this.imageLoaderService.preloadSingleProductImages(product, 'Loading images...');
         },
-        error: (error) => console.error('Error al cargar el producto:', error),
+        error: (error) => {
+          console.error('Error al cargar el producto:', error);
+          this.loadingService.stopLoading();
+        },
       });
     });
   }
