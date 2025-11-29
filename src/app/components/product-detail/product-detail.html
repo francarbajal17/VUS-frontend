@@ -1,0 +1,171 @@
+<!-- Loading Screen -->
+@if (loadingService.isLoading$()) {
+  <app-loading [message]="loadingService.loadingMessage$()"> </app-loading>
+}
+
+<!-- Main Content -->
+@if (!loadingService.isLoading$()) {
+  <div>
+    @if (product) {
+      <div class="product-detail-page">
+        <!-- Versión desktop (pantallas > 1024px) -->
+        <div class="desktop-version">
+          <section class="section-1">
+            <div class="image-left">
+              <img
+                [src]="product.ImageSection1Left"
+                [alt]="product.name + ' left section 1'"
+                draggable="false"
+              />
+            </div>
+            <div class="image-right">
+              <img
+                [src]="product.ImageSection1Right"
+                [alt]="product.name + ' right section 1'"
+                draggable="false"
+              />
+              <!-- Barra de información superpuesta -->
+              <div class="product-info-bar">
+                <div class="product-header">
+                  <div class="product-title-price">
+                    <h1 class="product-title">{{ product.name }}</h1>
+                    <p class="product-price">{{ product.price }}</p>
+                  </div>
+                  <div class="product-logo">
+                    <img src="/blackLogo.png" alt="VÜS Logo" draggable="false" />
+                  </div>
+                </div>
+
+                <div class="size-selection">
+                  <p class="size-label">Size</p>
+                  <div class="size-buttons">
+                    <button
+                      *ngFor="let size of product.sizes"
+                      [class.selected]="selectedSize() === size"
+                      (click)="onSizeSelect(size)"
+                      class="size-button"
+                    >
+                      {{ size }}
+                    </button>
+                  </div>
+                </div>
+
+                <div class="shipping-info">
+                  <p>
+                    Envíos todo el país. Se coordina al momento de realizar el pedido. Por la zona a
+                    cargo nuestro, envíos al interior o demás mediante DAC abonados por el cliente
+                    al momento de recibir el pedido.
+                  </p>
+                </div>
+
+                <button class="consultar-button" (click)="onConsultar()">CONSULTAR</button>
+
+                <div class="payment-info">
+                  <p>Métodos de pago: Transferencia bancaria o efectivo en la entrega.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="section-2">
+            <div class="image-left">
+              <img
+                [src]="product.ImageSection2Left"
+                [alt]="product.name + ' left section 2'"
+                draggable="false"
+              />
+            </div>
+            <div class="image-right">
+              <img
+                [src]="product.ImageSection2Right"
+                [alt]="product.name + ' right section 2'"
+                draggable="false"
+              />
+            </div>
+          </section>
+
+          <app-footer></app-footer>
+        </div>
+
+        <!-- Versión móvil (pantallas < 1024px) -->
+        <div class="mobile-version">
+          <!-- Sección 1: Imagen superior -->
+          <section class="mobile-section-1">
+            <div class="mobile-image-container">
+              <img
+                [src]="product.ImageSection1Left"
+                [alt]="product.name + ' section 1'"
+                draggable="false"
+              />
+            </div>
+          </section>
+
+          <!-- Sección 2: Información del producto -->
+          <section class="mobile-section-2">
+            <div class="mobile-product-info">
+              <div class="product-header">
+                <div class="product-title-price">
+                  <h1 class="product-title">{{ product.name }}</h1>
+                  <p class="product-price">{{ product.price }}</p>
+                </div>
+                <div class="product-logo">
+                  <img src="/blackLogo.png" alt="VÜS Logo" draggable="false" />
+                </div>
+              </div>
+
+              <div class="size-selection">
+                <p class="size-label">Size</p>
+                <div class="size-buttons">
+                  <button
+                    *ngFor="let size of product.sizes"
+                    [class.selected]="selectedSize() === size"
+                    (click)="onSizeSelect(size)"
+                    class="size-button"
+                  >
+                    {{ size }}
+                  </button>
+                </div>
+              </div>
+
+              <div class="shipping-info">
+                <p>
+                  Envíos todo el país. Se coordina al momento de realizar el pedido. Por la zona a
+                  cargo nuestro, envíos al interior o demás mediante DAC abonados por el cliente al
+                  momento de recibir el pedido.
+                </p>
+              </div>
+
+              <button class="consultar-button" (click)="onConsultar()">CONSULTAR</button>
+
+              <div class="payment-info">
+                <p>Métodos de pago: Transferencia bancaria o efectivo en la entrega.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Sección 3: Imagen inferior -->
+          <section class="mobile-section-3">
+            <div class="mobile-image-container">
+              <img
+                [src]="product.ImageSection1Right"
+                [alt]="product.name + ' section 2'"
+                draggable="false"
+              />
+            </div>
+          </section>
+
+          <!-- Footer Móvil -->
+          <app-footer></app-footer>
+        </div>
+      </div>
+    }
+
+    <!-- Mensaje cuando no se encuentra el producto -->
+    @if (!product) {
+      <div class="product-not-found">
+        <h1>Producto no encontrado</h1>
+        <p>El producto "{{ productName }}" no existe.</p>
+      </div>
+    }
+  </div>
+}

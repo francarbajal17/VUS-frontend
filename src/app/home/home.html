@@ -1,0 +1,21 @@
+<!-- Loading Screen -->
+@if (loadingService.isLoading$()) {
+  <app-loading [message]="loadingService.loadingMessage$()"> </app-loading>
+}
+
+<!-- Main Content -->
+@if (!loadingService.isLoading$()) {
+  <div>
+    <app-header></app-header>
+    <app-hero></app-hero>
+
+    <section class="section-2" *ngFor="let categoryName of categoryNames">
+      <app-product-category [title]="categoryName" [products]="principalItems[categoryName]">
+      </app-product-category>
+    </section>
+
+    <app-get-to-know-us></app-get-to-know-us>
+
+    <app-footer></app-footer>
+  </div>
+}

@@ -1,0 +1,33 @@
+<div class="loading-overlay">
+  <div class="loading-container">
+    <!-- Video Animation (Future Implementation) -->
+    @if (showVideo && videoSrc) {
+      <div class="video-container">
+        @if (isVideoLoaded()) {
+          <video [src]="videoSrc" autoplay loop muted playsinline class="loading-video">
+            Tu navegador no soporta videos.
+          </video>
+        }
+
+        <!-- Fallback mientras carga el video -->
+        <!-- @if (!isVideoLoaded()) {
+          <div class="video-fallback">
+            <div class="loading-spinner"></div>
+            <p class="loading-text">{{ message }}</p>
+          </div>
+        } -->
+      </div>
+    }
+
+    <!-- Text Animation (Current Implementation) -->
+    @if (!showVideo || !videoSrc) {
+      <!-- <div class="text-container">
+        <div class="loading-spinner"></div>
+        <p class="loading-text">{{ message }}</p>
+      </div> -->
+      <video autoplay loop muted playsinline width="300">
+        <source src="/Render2.mp4" type="video/mp4" />
+      </video>
+    }
+  </div>
+</div>

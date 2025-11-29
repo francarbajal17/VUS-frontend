@@ -1,10 +1,18 @@
-import { mergeApplicationConfig, ApplicationConfig } from '@angular/core';
+import { ApplicationConfig } from '@angular/core';
 import { provideServerRendering, withRoutes } from '@angular/ssr';
-import { appConfig } from './app.config';
+import { provideRouter, withInMemoryScrolling } from '@angular/router';
+import { routes } from './app.routes';
 import { serverRoutes } from './app.routes.server';
-
-const serverConfig: ApplicationConfig = {
-  providers: [provideServerRendering(withRoutes(serverRoutes))],
+import { provideHttpClient, withFetch } from '@angular/common/http';
+export const config: ApplicationConfig = {
+  providers: [
+    provideRouter(
+      routes,
+      withInMemoryScrolling({
+        scrollPositionRestoration: 'enabled',
+      }),
+    ),
+    provideServerRendering(withRoutes(serverRoutes)),
+    provideHttpClient(withFetch()),
+  ],
 };
-
-export const config = mergeApplicationConfig(appConfig, serverConfig);
