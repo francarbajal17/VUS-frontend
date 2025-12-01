@@ -7,7 +7,7 @@ export class LoadingService {
   private readonly isLoading = signal<boolean>(false);
   private readonly loadingMessage = signal<string>('Loading...');
   private readonly minLoadingTime = signal<number>(2000); // 2 segundos por defecto
-  private readonly enableMinLoadingTime = signal<boolean>(true); // Habilitado por defecto
+  private readonly enableMinLoadingTime = signal<boolean>(false); // Habilitado por defecto
   private loadingStartTime: number = 0;
   private pendingStopLoading: boolean = false;
 
