@@ -19,6 +19,12 @@
   text-align: center;
 }
 
+.loading-video-main {
+  width: 250px;
+  height: auto;
+  max-width: 100%;
+}
+
 /* Video Container Styles */
 .video-container {
   position: relative;
@@ -89,6 +95,12 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+  .loading-video-main {
+    width: 150px;
+  }
+}
+
 @media (max-width: 768px) {
   .loading-text {
     font-size: 16px;
