@@ -160,6 +160,17 @@
   background-color: rgba(40, 40, 40, 1);
 }
 
+.consultar-button:disabled {
+  background-color: rgba(200, 200, 200, 1);
+  color: white;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.consultar-button:disabled:hover {
+  background-color: rgba(200, 200, 200, 1);
+}
+
 .chat-icon {
   width: 16px;
   height: 16px;
@@ -504,6 +515,17 @@
 
 .mobile-product-info .consultar-button:hover {
   background-color: rgba(40, 40, 40, 1);
+}
+
+.mobile-product-info .consultar-button:disabled {
+  background-color: rgba(200, 200, 200, 1);
+  color: white;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.mobile-product-info .consultar-button:disabled:hover {
+  background-color: rgba(200, 200, 200, 1);
 }
 
 .mobile-product-info .chat-icon {
