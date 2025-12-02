@@ -51,8 +51,20 @@ export class ProductDetail implements OnInit {
     this.selectedSize.set(size);
   }
 
+  //onConsultar(): void {
+  // Aquí se puede implementar la lógica para contactar
+  // console.log('Consultar producto:', this.product?.name, 'Talla:', this.selectedSize());
+  //}
   onConsultar(): void {
-    // Aquí se puede implementar la lógica para contactar
-    console.log('Consultar producto:', this.product?.name, 'Talla:', this.selectedSize());
+    const phoneNumber = '59899373784'; // Número del negocio en formato internacional sin "+"
+
+    const nombre = this.product?.name ?? 'Producto';
+    const talle = this.selectedSize() ?? 'Sin talla';
+
+    const mensaje = `Hola! Estoy interesado en la prenda "${nombre}" en talle ${talle}. ¿Está disponible?`;
+
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(mensaje)}`;
+
+    window.open(url, '_blank');
   }
 }
