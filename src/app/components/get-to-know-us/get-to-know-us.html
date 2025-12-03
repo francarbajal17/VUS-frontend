@@ -4,12 +4,14 @@
       <img [src]="leftImage" alt="Know us left" class="left-img" draggable="false" />
     </div>
     <div class="right">
-      <img
-        [src]="rightImage"
-        alt="Know us right"
-        class="right-img with-opacity"
-        draggable="false"
-      />
+      <a routerLink="/get2knowvus" class="right-img-link">
+        <img
+          [src]="rightImage"
+          alt="Know us right"
+          class="right-img with-opacity"
+          draggable="false"
+        />
+      </a>
       <div class="overlay">
         <a routerLink="/get2knowvus" class="text-content">
           <h2 class="title">
@@ -18,7 +20,9 @@
           </h2>
           <p class="slogan">{{ slogan }}</p>
         </a>
-        <img class="logo" [src]="logoSrc" alt="logo" draggable="false" />
+        <a routerLink="/get2knowvus" class="logo-link">
+          <img class="logo" [src]="logoSrc" alt="logo" draggable="false" />
+        </a>
       </div>
     </div>
   </div>
