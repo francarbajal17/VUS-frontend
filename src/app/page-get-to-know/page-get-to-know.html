@@ -1,35 +1,43 @@
-<section class="page-get-to-know">
-  <div class="background-image"></div>
-  <div class="overlay"></div>
-  <div class="content-container">
-    <div class="left-column">
-      <h1 class="title">
-        <span class="title-prefix">GET TO KNOW</span>
-        <span class="title-word"> <span class="title-v">V</span>ÜS </span>
-      </h1>
-      <div class="text-content">
-        <p class="paragraph">
-          Somos una marca creada por tres amigos, Franco, John y Santiago. Los tres compartimos una
-          misma visión: construir un estilo de vida auténtico, aventurero y con personalidad fuerte.
-          No hacemos solo ropa. Creamos prendas que representan una forma de ver el mundo.
-        </p>
-        <p class="paragraph">
-          En VÜS creemos en la valentía, en la iniciativa y en esa rebeldía positiva que te impulsa
-          a buscar experiencias nuevas. Cada prenda es un símbolo de identidad para quienes se
-          animan a ser distintos, a tomar riesgos y a expresar quiénes son sin filtros.
-        </p>
-        <p class="paragraph">
-          VÜS es una comunidad que crece alrededor de esa actitud. Nos inspira la cultura urbana, el
-          espíritu aventurero y la energía de quienes buscan experiencias que los marquen. Queremos
-          acompañarte en esos momentos reales, espontáneos y llenos de personalidad que te definen.
-          Cada drop es una edición pensada para transmitir esa esencia y para que cada prenda hable
-          por vos sin necesidad de explicarlo.
-        </p>
-        <p class="paragraph2">VÜS es autenticidad. Es movimiento. Es aventura.</p>
+<!-- Loading Screen -->
+@if (loadingService.isLoading$()) {
+  <app-loading [message]="loadingService.loadingMessage$()"> </app-loading>
+}
+
+<!-- Main Content -->
+@if (!loadingService.isLoading$()) {
+  <section class="page-get-to-know">
+    <div class="background-image"></div>
+    <div class="overlay"></div>
+    <div class="content-container">
+      <div class="left-column">
+        <h1 class="title">
+          <span class="title-prefix">GET TO KNOW</span>
+          <span class="title-word"> <span class="title-v">V</span>ÜS </span>
+        </h1>
+        <div class="text-content">
+          <p class="paragraph">
+            Somos una marca creada por tres amigos, Franco, John y Santiago. Los tres compartimos
+            una misma visión: construir un estilo de vida auténtico, aventurero y con personalidad
+            fuerte. No hacemos solo ropa. Creamos prendas que representan una forma de ver el mundo.
+          </p>
+          <p class="paragraph">
+            En VÜS creemos en la valentía, en la iniciativa y en esa rebeldía positiva que te
+            impulsa a buscar experiencias nuevas. Cada prenda es un símbolo de identidad para
+            quienes se animan a ser distintos, a tomar riesgos y a expresar quiénes son sin filtros.
+          </p>
+          <p class="paragraph">
+            VÜS es una comunidad que crece alrededor de esa actitud. Nos inspira la cultura urbana,
+            el espíritu aventurero y la energía de quienes buscan experiencias que los marquen.
+            Queremos acompañarte en esos momentos reales, espontáneos y llenos de personalidad que
+            te definen. Cada drop es una edición pensada para transmitir esa esencia y para que cada
+            prenda hable por vos sin necesidad de explicarlo.
+          </p>
+          <p class="paragraph2">VÜS es autenticidad. Es movimiento. Es aventura.</p>
+        </div>
+      </div>
+      <div class="right-column">
+        <img src="/logo-alternate.png" alt="VÜS Logo" class="logo" draggable="false" />
       </div>
     </div>
-    <div class="right-column">
-      <img src="/logo-alternate.png" alt="VÜS Logo" class="logo" draggable="false" />
-    </div>
-  </div>
-</section>
+  </section>
+}
